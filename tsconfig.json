@@ -20,7 +20,11 @@
 
     "outDir": "lib",
     "rootDir": "src",
-    "baseUrl": "."
+    "baseUrl": ".",
+
+    "paths": {
+      "*": ["types/*"]
+    }
   },
   "include": ["src/**/*", "src/**/*.json"]
 }

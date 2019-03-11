@@ -12,6 +12,7 @@ module.exports = api => {
         }
       ],
       '@babel/preset-typescript'
-    ]
+    ],
+    plugins: ['add-module-exports']
   };
 };

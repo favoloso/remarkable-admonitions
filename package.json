@@ -1,6 +1,6 @@
 {
   "name": "remarkable-callout",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A remarkable plugin to add callouts support",
   "repository": "https://github.com/favoloso/remarkable-callout.git",
   "author": "Leonardo Ascione <leonardo@favoloso.team>",

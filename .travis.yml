@@ -5,6 +5,8 @@ node_js:
 cache: yarn
 install:
   - yarn --pure-lockfile
+  - yarn global add codecov
 script:
   - yarn test:ci
   - yarn check-types
+  - codecov

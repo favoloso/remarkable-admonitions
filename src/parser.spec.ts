@@ -12,11 +12,12 @@ describe('parser', () => {
   test('should render a callout', () => {
     md.use(plugin());
     expect(md.render(`:::note\nInfo\nABC\n:::`)).toMatchInlineSnapshot(`
-"<div class=\\"callout callout-note\\">
-    <div class=\\"callout-heading\\">
-      <div class=\\"callout-icon\\">ℹ️</div>
-    </div>
-    <div class=\\"callout-content\\">      
+"
+    <div class=\\"admonition admonition-note\\">
+      <div class=\\"admonition-heading\\">
+        <h5><div class=\\"admonition-icon\\">ℹ️</div> note</h5>
+      </div>
+      <div class=\\"admonition-content\\">
     <p>Info</p>
 <p>ABC</p>
 </div></div>"
@@ -34,11 +35,12 @@ describe('parser', () => {
         Normal paragraph
       `)
     ).toMatchInlineSnapshot(`
-"<div class=\\"callout callout-warning\\">
-    <div class=\\"callout-heading\\">
-      <div class=\\"callout-icon\\">⚠️</div>
-    </div>
-    <div class=\\"callout-content\\">      
+"
+    <div class=\\"admonition admonition-warning\\">
+      <div class=\\"admonition-heading\\">
+        <h5><div class=\\"admonition-icon\\">⚠️</div> warning</h5>
+      </div>
+      <div class=\\"admonition-content\\">
     <p>This is a warning</p>
 </div></div><p>Normal paragraph</p>
 "
@@ -57,11 +59,12 @@ describe('parser', () => {
       `)
     ).toMatchInlineSnapshot(`
 "<p>Normal paragraph</p>
-<div class=\\"callout callout-note\\">
-    <div class=\\"callout-heading\\">
-      <div class=\\"callout-icon\\">ℹ️</div>
-    </div>
-    <div class=\\"callout-content\\">      
+
+    <div class=\\"admonition admonition-note\\">
+      <div class=\\"admonition-heading\\">
+        <h5><div class=\\"admonition-icon\\">ℹ️</div> note</h5>
+      </div>
+      <div class=\\"admonition-content\\">
     <p>Info</p>
 </div></div>"
 `);
@@ -83,11 +86,12 @@ describe('parser', () => {
         :::
       `)
     ).toMatchInlineSnapshot(`
-"<div class=\\"callout callout-caution\\">
-    <div class=\\"callout-heading\\">
-      <div class=\\"callout-icon\\">🔥</div>
-    </div>
-    <div class=\\"callout-content\\">      
+"
+    <div class=\\"admonition admonition-caution\\">
+      <div class=\\"admonition-heading\\">
+        <h5><div class=\\"admonition-icon\\">🔥</div> caution</h5>
+      </div>
+      <div class=\\"admonition-content\\">
     <p><em>Alert!</em></p>
 <pre><code>this is my code block
 </code></pre>
@@ -103,11 +107,12 @@ describe('parser', () => {
         *Alert!*
       `)
     ).toMatchInlineSnapshot(`
-"<div class=\\"callout callout-important\\">
-    <div class=\\"callout-heading\\">
-      <div class=\\"callout-icon\\">❗️</div>
-    </div>
-    <div class=\\"callout-content\\">      
+"
+    <div class=\\"admonition admonition-important\\">
+      <div class=\\"admonition-heading\\">
+        <h5><div class=\\"admonition-icon\\">❗️</div> important</h5>
+      </div>
+      <div class=\\"admonition-content\\">
     <p><em>Alert!</em></p>
 </div></div>"
 `);
@@ -122,11 +127,12 @@ describe('parser', () => {
         :art:
       `)
     ).toMatchInlineSnapshot(`
-"<div class=\\"callout callout-caution\\">
-    <div class=\\"callout-heading\\">
-      <div class=\\"callout-icon\\">🔥</div>
-    </div>
-    <div class=\\"callout-content\\">      
+"
+    <div class=\\"admonition admonition-caution\\">
+      <div class=\\"admonition-heading\\">
+        <h5><div class=\\"admonition-icon\\">🔥</div> caution</h5>
+      </div>
+      <div class=\\"admonition-content\\">
     <p>Message
 :art:</p>
 </div></div>"

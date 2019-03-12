@@ -1,6 +1,7 @@
 import Remarkable from 'remarkable';
 import { AdmonitionOptions } from './';
 import { iconRenderer } from './icon-renderers/icon-renderer';
+import { AdmonitionType } from './type';
 
 /**
  * Remarkable admonition renderer.
@@ -12,13 +13,15 @@ export function openRenderer(
     const renderIcon = iconRenderer(admonitionOpts.icon);
 
     const token = tokens[idx] as any;
-    const icon = renderIcon.content(token.calloutType as 'tip');
-    const iconTemplate = `<div class="callout-icon">${icon || ''}</div>`;
-    return `<div class="callout callout-${token.calloutType}">
-    <div class="callout-heading">
-      ${token.title ? `<h5>${iconTemplate} ${token.title}</h5>` : iconTemplate}
-    </div>
-    <div class="callout-content">      
+    const icon = renderIcon.content(token.admonition as AdmonitionType);
+    const iconTemplate = `<div class="admonition-icon">${icon || ''}</div>`;
+
+    return `
+    <div class="admonition admonition-${token.admonition}">
+      <div class="admonition-heading">
+        <h5>${iconTemplate} ${token.title || token.admonition}</h5>
+      </div>
+      <div class="admonition-content">
     `;
   };
 }

@@ -28,12 +28,12 @@ export const parser: Remarkable.BlockParsingRule = (
   // We need exactly 3 `:`
   if (pos - mem !== 3) return false;
 
-  const [calloutType, title] = state.src
+  const [admonition, title] = state.src
     .slice(pos, max)
     .trim()
     .split(' ', 2);
 
-  if (calloutType === '') return false;
+  if (admonition === '') return false;
 
   if (silent) return true;
 
@@ -71,7 +71,7 @@ export const parser: Remarkable.BlockParsingRule = (
     type: TOKENS.CALLOUT_OPEN,
     level: state.level,
     lines: lines = [startLine, 0],
-    calloutType,
+    admonition,
     title
   } as any);
   state.parser.tokenize(state, startLine + 1, nextLine);

@@ -8,12 +8,14 @@
   "scripts": {
     "dev": "babel src -w -d lib -x '.ts,.tsx'",
     "build": "yarn build:lib && yarn build:types",
+    "prebuild:lib": "rm -rf lib",
     "build:lib": "babel src -d lib -x '.ts,.tsx'",
     "build:types": "tsc --emitDeclarationOnly",
     "check-types": "tsc --noEmit",
-    "release": "release-it",
+    "release": "yarn test && yarn build && release-it",
     "test": "jest",
-    "test:dev": "jest --watch"
+    "test:dev": "jest --watch",
+    "test:ci": "jest --ci --runInBand --coverage --reporters=default --reporters=jest-junit"
   },
   "files": [
     "/lib"
@@ -45,6 +47,9 @@
       "beforeStage": "./node_modules/.bin/conventional-changelog -p @favoloso/emoji -i CHANGELOG.md -s"
     }
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
@@ -60,6 +65,7 @@
     "dedent": "^0.7.0",
     "husky": "^1.3.1",
     "jest": "^24.3.1",
+    "jest-junit": "^6.3.0",
     "prettier": "^1.16.4",
     "release-it": "^10.3.1",
     "remarkable": "^1.7.1",

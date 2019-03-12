@@ -138,4 +138,25 @@ describe('parser', () => {
 </div></div>"
 `);
   });
+
+  test('should render title', () => {
+    md.use(plugin());
+    expect(
+      md.render(dedent`
+        :::caution With a title!
+        Message
+        :art:
+      `)
+    ).toMatchInlineSnapshot(`
+"
+    <div class=\\"admonition admonition-caution\\">
+      <div class=\\"admonition-heading\\">
+        <h5><div class=\\"admonition-icon\\">🔥</div>  With a title!</h5>
+      </div>
+      <div class=\\"admonition-content\\">
+    <p>Message
+:art:</p>
+</div></div>"
+`);
+  });
 });

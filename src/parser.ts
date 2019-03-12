@@ -28,10 +28,12 @@ export const parser: Remarkable.BlockParsingRule = (
   // We need exactly 3 `:`
   if (pos - mem !== 3) return false;
 
-  const [admonition, title] = state.src
-    .slice(pos, max)
-    .trim()
-    .split(' ', 2);
+  const line = state.src.slice(pos, max).trim();
+
+  let sep = line.indexOf(' ');
+  if (sep === -1) sep = line.length;
+  const admonition = line.slice(0, sep);
+  const title = line.slice(sep);
 
   if (admonition === '') return false;
 

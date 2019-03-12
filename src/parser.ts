@@ -11,7 +11,7 @@ export const parser: Remarkable.BlockParsingRule = (
   endLine,
   silent
 ) => {
-  const pos = state.bMarks[startLine] + state.blkIndent;
+  let pos = state.bMarks[startLine] + state.blkIndent;
   const max = state.eMarks[startLine];
 
   // Not enough chars or ending line with `:::`.
@@ -22,7 +22,20 @@ export const parser: Remarkable.BlockParsingRule = (
   // Wrong marker
   if (marker !== 0x3a /* ':' */) return false;
 
-  const calloutType = state.src.slice(pos + 3, max).trim();
+  let mem = pos;
+  pos = state.skipChars(pos, marker);
+
+  // We need exactly 3 `:`
+  if (pos - mem !== 3) return false;
+
+  const [calloutType, title] = state.src
+    .slice(pos, max)
+    .trim()
+    .split(' ', 2);
+
+  if (calloutType === '') return false;
+
+  if (silent) return true;
 
   // Scan for marker ending
   let nextLine = startLine;
@@ -31,7 +44,9 @@ export const parser: Remarkable.BlockParsingRule = (
   while (nextLine < endLine) {
     nextLine++;
 
-    const nextPos = state.bMarks[nextLine] + state.blkIndent;
+    if (nextLine >= endLine) break;
+
+    const nextPos = state.bMarks[nextLine] + state.tShift[nextLine];
     const nextMax = state.eMarks[nextLine];
 
     if (state.src.charCodeAt(nextPos) !== marker) continue;
@@ -43,18 +58,33 @@ export const parser: Remarkable.BlockParsingRule = (
     }
   }
 
+  // Ensure nested parsing stops at delimiting block
+  const oldMax = state.lineMax;
+  state.lineMax = nextLine + (hasEnding ? -1 : 0);
+  const oldParentType = state.parentType;
+  state.parentType = 'admonition' as any;
+
+  let lines;
+
   // Let register token and progress
   state.tokens.push({
     type: TOKENS.CALLOUT_OPEN,
     level: state.level,
-    lines: [startLine, nextLine + (hasEnding ? 1 : 0)],
-    calloutType
+    lines: lines = [startLine, 0],
+    calloutType,
+    title
   } as any);
-  state.parser.tokenize(state, startLine + 1, nextLine);
+  state.parser.tokenize(state, startLine + 1, nextLine + (hasEnding ? -1 : 0));
   state.tokens.push({
     type: TOKENS.CALLOUT_CLOSE,
     level: state.level
   } as any);
+
+  // Revert
+  lines[1] = nextLine;
   state.line = nextLine + (hasEnding ? 1 : 0);
+  state.lineMax = oldMax;
+  state.parentType = oldParentType;
+
   return true;
 };

@@ -1,8 +1,8 @@
 {
-  "name": "remarkable-callout",
+  "name": "remarkable-admonitions",
   "version": "0.1.1",
-  "description": "A remarkable plugin to add callouts support",
-  "repository": "https://github.com/favoloso/remarkable-callout.git",
+  "description": "A remarkable plugin to add admonitions support",
+  "repository": "https://github.com/favoloso/remarkable-admonitions.git",
   "author": "Leonardo Ascione <leonardo@favoloso.team>",
   "license": "MIT",
   "scripts": {

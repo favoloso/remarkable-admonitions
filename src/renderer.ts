@@ -10,7 +10,7 @@ export const calloutOpenRenderer: Remarkable.Rule = (
   env
 ) => {
   const token = tokens[idx] as any;
-  return `<p class="callout callout-${token.calloutType}">`;
+  return `<div class="callout callout-${token.calloutType}">`;
 };
 
 /**
@@ -22,5 +22,5 @@ export const calloutCloseRenderer: Remarkable.Rule = (
   options,
   env
 ) => {
-  return `</p>`;
+  return `</div>`;
 };

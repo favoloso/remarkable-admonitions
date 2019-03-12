@@ -18,9 +18,9 @@ describe('parser', () => {
         :::
       `)
     ).toMatchInlineSnapshot(`
-"<p class=\\"callout callout-info\\"><p>Info
+"<div class=\\"callout callout-info\\"><p>Info
 :::</p>
-</p>"
+</div>"
 `);
   });
 
@@ -35,9 +35,9 @@ describe('parser', () => {
         Normal paragraph
       `)
     ).toMatchInlineSnapshot(`
-"<p class=\\"callout callout-info\\"><p>Info
+"<div class=\\"callout callout-info\\"><p>Info
 :::</p>
-</p><p>Normal paragraph</p>
+</div><p>Normal paragraph</p>
 "
 `);
   });
@@ -54,9 +54,9 @@ describe('parser', () => {
       `)
     ).toMatchInlineSnapshot(`
 "<p>Normal paragraph</p>
-<p class=\\"callout callout-info\\"><p>Info
+<div class=\\"callout callout-info\\"><p>Info
 :::</p>
-</p>"
+</div>"
 `);
   });
 
@@ -73,10 +73,10 @@ describe('parser', () => {
         :::
       `)
     ).toMatchInlineSnapshot(`
-"<p class=\\"callout callout-caution\\"><p><em>Alert!</em></p>
+"<div class=\\"callout callout-caution\\"><p><em>Alert!</em></p>
 <pre><code>this is my code block
 </code></pre>
-</p>"
+</div>"
 `);
   });
 
@@ -88,8 +88,8 @@ describe('parser', () => {
         *Alert!*
       `)
     ).toMatchInlineSnapshot(`
-"<p class=\\"callout callout-caution\\"><p><em>Alert!</em></p>
-</p>"
+"<div class=\\"callout callout-caution\\"><p><em>Alert!</em></p>
+</div>"
 `);
   });
 
@@ -102,9 +102,9 @@ describe('parser', () => {
         :art:
       `)
     ).toMatchInlineSnapshot(`
-"<p class=\\"callout callout-caution\\"><p>Message
+"<div class=\\"callout callout-caution\\"><p>Message
 :art:</p>
-</p>"
+</div>"
 `);
   });
 });

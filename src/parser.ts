@@ -31,7 +31,7 @@ export const parser: Remarkable.BlockParsingRule = (
   while (nextLine < endLine) {
     nextLine++;
 
-    const nextPos = state.bMarks[nextLine] + state.tShift[nextLine];
+    const nextPos = state.bMarks[nextLine] + state.blkIndent;
     const nextMax = state.eMarks[nextLine];
 
     if (state.src.charCodeAt(nextPos) !== marker) continue;
@@ -46,14 +46,14 @@ export const parser: Remarkable.BlockParsingRule = (
   // Let register token and progress
   state.tokens.push({
     type: TOKENS.CALLOUT_OPEN,
-    level: state.level++,
+    level: state.level,
     lines: [startLine, nextLine + (hasEnding ? 1 : 0)],
     calloutType
   } as any);
   state.parser.tokenize(state, startLine + 1, nextLine);
   state.tokens.push({
     type: TOKENS.CALLOUT_CLOSE,
-    level: state.level--
+    level: state.level
   } as any);
   state.line = nextLine + (hasEnding ? 1 : 0);
   return true;

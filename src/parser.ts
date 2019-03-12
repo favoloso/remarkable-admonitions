@@ -74,7 +74,7 @@ export const parser: Remarkable.BlockParsingRule = (
     calloutType,
     title
   } as any);
-  state.parser.tokenize(state, startLine + 1, nextLine + (hasEnding ? -1 : 0));
+  state.parser.tokenize(state, startLine + 1, nextLine);
   state.tokens.push({
     type: TOKENS.CALLOUT_CLOSE,
     level: state.level

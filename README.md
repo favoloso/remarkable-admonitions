@@ -48,6 +48,18 @@ Beware Ogre
 */
 ```
 
+Supported admonition types are: `caution`, `note`, `important`, `tip`,
+`warning`.
+
+By default block title is the admonition type. You can provide a custom title
+after the opening tag:
+
+```md
+:::note This is my custom title
+A note.
+:::
+```
+
 ### With Docusaurus
 
 If you are using [Docusaurus](https://docusaurus.io), you can load the plugin

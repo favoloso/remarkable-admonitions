@@ -1,6 +1,6 @@
 {
   "name": "remarkable-admonitions",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A remarkable plugin to add admonitions support",
   "repository": "https://github.com/favoloso/remarkable-admonitions.git",
   "author": "Leonardo Ascione <leonardo@favoloso.team>",

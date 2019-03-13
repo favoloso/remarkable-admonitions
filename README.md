@@ -2,7 +2,7 @@
 
 [![Travis (.com)](https://img.shields.io/travis/com/favoloso/remarkable-admonitions.svg)](https://travis-ci.com/favoloso/remarkable-admonitions)
 [![Codecov](https://img.shields.io/codecov/c/github/favoloso/remarkable-admonitions.svg)](https://codecov.io/gh/favoloso/remarkable-admonitions)
-[![npm](https://img.shields.io/npm/v/remarkable-admonitions.svg)](https://www.npmjs.com/package/remarkable-admonitions)
+[![npm](https://img.shields.io/npm/v/remarkable-admonitions.svg?style=popout)](https://www.npmjs.com/package/remarkable-admonitions)
 
 Adds admonitions parsing support to Remarkable
 

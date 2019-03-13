@@ -72,6 +72,6 @@ into your `custom/` folder.
 
 You may configure this plugin with the following options:
 
-| Option     | Default      | Description                                                                                                                                                                            |
-| ---------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`icon`** | `svg-inline` | Allows to use a different method to render admonition icons. By default it uses `svg-inline` with [Octicons](https://octicons.github.com) icons. Choose `emoji` to use Emojis instead. |
+| Option     | Default | Description                                                                                                                                                                   |
+| ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`icon`** | `emoji` | Allows to use a different method to render admonition icons. By default it uses `emoji` (unicode Emojis). Choose `svg-inline` to use [Octicons](https://octicons.github.com). |

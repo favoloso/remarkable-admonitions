@@ -29,7 +29,7 @@ import Remarkable from 'remarkable';
 const md = new Remarkable();
 
 import admonitions from 'remarkable-admonitions';
-md.use(admonitions({ icon: 'emoji' }));
+md.use(admonitions());
 
 md.render(`
 :::caution
@@ -47,6 +47,26 @@ Beware Ogre
     </div>
 */
 ```
+
+### With Docusaurus
+
+If you are using [Docusaurus](https://docusaurus.io), you can load the plugin
+in `siteConfig.js`:
+
+```js
+const siteConfig = {
+  // ...
+  markdownPlugins: [
+    // Highlight admonitions.
+    require('remarkable-admonitions')({ icon: 'svg-inline' })
+  ]
+};
+```
+
+There is a style developed to match its visual appearence (the same you can see
+in the preview image up here). Due to Docusaurus [CSS loading system](https://docusaurus.io), you need to download the css from
+[docusaurus-admonitions.css](styles/docusaurus-admonitions.css) and place it
+into your `custom/` folder.
 
 ## Options
 

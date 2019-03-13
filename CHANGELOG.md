@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/favoloso/remarkable-admonitions/compare/v0.2.0...v0.2.1) (2019-03-13)
+
+
+### 📚 Documentation
+
+* Fix default icon-renderer ([79491ef](https://github.com/favoloso/remarkable-admonitions/commit/79491ef))
+* Fix npm badge ([82eb9ef](https://github.com/favoloso/remarkable-admonitions/commit/82eb9ef))
+
+
 # [0.2.0](https://github.com/favoloso/remarkable-admonitions/compare/v0.1.1...v0.2.0) (2019-03-13)
 
 

@@ -4,7 +4,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/favoloso/remarkable-admonitions.svg)](https://codecov.io/gh/favoloso/remarkable-admonitions)
 [![npm](https://img.shields.io/npm/v/remarkable-admonitions.svg?style=popout)](https://www.npmjs.com/package/remarkable-admonitions)
 
-Adds admonitions parsing support to Remarkable
+Adds admonitions parsing support to Remarkable. (There's also a [React component](https://github.com/nebrelbug/react-admonitions))
 
 <img src="assets/preview.png" width="680" />
 

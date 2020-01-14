@@ -24,6 +24,25 @@ describe('parser', () => {
 `);
   });
 
+  test('should render a callout within a list', () => {
+    md.use(plugin());
+    expect(md.render(`- A list\n\n    :::note\n    Info\n    ABC\n    :::\n`)).toMatchInlineSnapshot(`
+"<ul>
+<li><p>A list</p>
+
+    <div class=\\"admonition admonition-note\\">
+      <div class=\\"admonition-heading\\">
+        <h5><div class=\\"admonition-icon\\">ℹ️</div> note</h5>
+      </div>
+      <div class=\\"admonition-content\\">
+    <p>Info</p>
+<p>ABC</p>
+</div></div></li>
+</ul>
+"
+`);
+  });
+
   test('should ignore content after callout', () => {
     md.use(plugin());
     expect(

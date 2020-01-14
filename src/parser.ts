@@ -11,7 +11,7 @@ export const parser: Remarkable.BlockParsingRule = (
   endLine,
   silent
 ) => {
-  let pos = state.bMarks[startLine] + state.blkIndent;
+  let pos = state.bMarks[startLine] + state.tShift[startLine];
   const max = state.eMarks[startLine];
 
   // Not enough chars or ending line with `:::`.

@@ -640,10 +640,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@favoloso/conventional-changelog-emoji@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@favoloso/conventional-changelog-emoji/-/conventional-changelog-emoji-0.9.0.tgz#87be9fcf6d092c84cc7e877d3efb94ae6f50dfe0"
-  integrity sha512-QFyvVI7qlcoFatktHxZdS/JCwBnEHIub9HMOIGGwCK6uQUHvPzO7G1Y8LIuH/849Fc/xb4ChJcTdo/pdEtbDmg==
+"@favoloso/conventional-changelog-emoji@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@favoloso/conventional-changelog-emoji/-/conventional-changelog-emoji-0.10.0.tgz#2c420be8285baa93d952efd092d1d3b058315f1a"
+  integrity sha512-82ZOOFmmqXeCn9wxCmkD1+vqWZmTyOwlrcyDAThhuMPqyA1ogpprA9J15Pr0/BWq0eMGbo01yT3/kKJ10++USw==
   dependencies:
     conventional-commits-parser "^3.0.1"
     cosmiconfig "^5.1.0"

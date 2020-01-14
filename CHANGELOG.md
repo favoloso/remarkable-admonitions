@@ -1,3 +1,16 @@
+## [0.2.2](https://github.com/favoloso/remarkable-admonitions/compare/v0.2.1...v0.2.2) (2020-01-14)
+
+
+### 🐛 Bug Fixes
+
+* Parse admonitions within lists ([5d70c74](https://github.com/favoloso/remarkable-admonitions/commit/5d70c74)), closes [#26](https://github.com/favoloso/remarkable-admonitions/issues/26)
+
+
+### 📚 Documentation
+
+* Add example for custom title and types ([21b22f3](https://github.com/favoloso/remarkable-admonitions/commit/21b22f3))
+
+
 ## [0.2.1](https://github.com/favoloso/remarkable-admonitions/compare/v0.2.0...v0.2.1) (2019-03-13)
 
 

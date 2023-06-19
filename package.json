@@ -58,7 +58,7 @@
     "@favoloso/conventional-changelog-emoji": "^0.9.0",
     "@types/dedent": "^0.7.0",
     "@types/jest": "^24.0.11",
-    "@types/remarkable": "^1.7.2",
+    "@types/remarkable": "^2.0.0",
     "babel-jest": "^24.3.1",
     "babel-plugin-add-module-exports": "^1.0.0",
     "conventional-changelog-cli": "^2.0.12",
@@ -68,7 +68,7 @@
     "jest-junit": "^6.3.0",
     "prettier": "^1.16.4",
     "release-it": "^10.3.1",
-    "remarkable": "^1.7.1",
+    "remarkable": "^2.0.0",
     "typescript": "^3.3.3333"
   }
 }
